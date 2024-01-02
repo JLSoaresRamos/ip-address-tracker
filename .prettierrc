@@ -7,6 +7,6 @@
     "tabWidth": 2,
     "useTabs": true,
     "jsxSingleQuote": true,
-    "endOfLine": "lf",
+    "endOfLine": "crlf",
     "plugins": ["prettier-plugin-tailwindcss"]
 }
