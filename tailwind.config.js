@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'desktop': "url('/images/pattern-bg-desktop.png')",
+        'mobile': "url('/images/pattern-bg-mobile.png')",
+      },
       colors: {
         'very-dark-gray': 'hsl(0, 0%, 17%)',
         'dark-gray': 'hsl(0, 0%, 59%)'

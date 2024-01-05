@@ -19,3 +19,6 @@ tsconfig.node.json
 dist
 *.md
 **/*.html
+
+# Dev enviroment
+.env
