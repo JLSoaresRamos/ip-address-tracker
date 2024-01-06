@@ -86,6 +86,6 @@ I need to improve my abilities to work with third-party APIs and enhance my logi
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/JLSoaresRamos)
+- Frontend Mentor - [@JLSoaresRamos](https://www.frontendmentor.io/profile/JLSoaresRamos)
 - Linkedin - [@jlramossoares](https://www.linkedin.com/in/jlramossoares/)
 
