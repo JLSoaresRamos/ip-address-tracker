@@ -4,9 +4,10 @@ import { Form, Field } from 'react-final-form'
 
 import { withMask } from 'use-mask-input'
 
-import IPInfo from './components/IPInfo'
-
 import { IPInfoProps } from './@types/IPInfo'
+
+import IPInfo from './components/IPInfo'
+import Map from './components/Map'
 
 import { api } from './apis/ip_geolocation'
 
@@ -57,12 +58,12 @@ function App() {
 				render={({ handleSubmit }) => (
 					<form
 						onSubmit={handleSubmit}
-						className='flex h-2/4 w-full flex-col items-center gap-4 bg-mobile bg-cover p-6'
+						className='flex h-2/4 w-full flex-col items-center gap-4 bg-mobile bg-cover p-6 lg:h-2/5 lg:bg-desktop'
 					>
-						<h1 className='text-2xl font-medium text-white'>
+						<h1 className='text-2xl font-medium text-white lg:text-4xl'>
 							IP Address Tracker
 						</h1>
-						<section className='flex w-full'>
+						<section className='flex w-full max-w-lg'>
 							<Field
 								name='ip'
 								render={({ input }) => (
@@ -71,7 +72,7 @@ function App() {
 										ref={ipMaskRef}
 										id='ip'
 										type='text'
-										className='w-full rounded-bl-xl rounded-tl-xl px-5 py-3 text-input text-very-dark-gray outline-0'
+										className='w-full rounded-bl-xl rounded-tl-xl px-5 py-3 text-input text-very-dark-gray outline-0 lg:text-2xl'
 									/>
 								)}
 							/>
@@ -85,13 +86,23 @@ function App() {
 				)}
 			/>
 			{ipInfo && (
-				<IPInfo
-					as={ipInfo.as}
-					domains={ipInfo.domains}
-					ip={ipInfo.ip}
-					isp={ipInfo.isp}
-					location={ipInfo.location}
-				/>
+				<>
+					<IPInfo
+						as={ipInfo.as}
+						domains={ipInfo.domains}
+						ip={ipInfo.ip}
+						isp={ipInfo.isp}
+						location={ipInfo.location}
+					/>
+					<div className='h-full'>
+						{
+							<Map
+								lat={ipInfo.location.lat}
+								long={ipInfo.location.lng}
+							/>
+						}
+					</div>
+				</>
 			)}
 		</main>
 	)
