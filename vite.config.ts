@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env.IP_GEOLOCATION_KEY': JSON.stringify(env.IP_GEOLOCATION_KEY)
     },
+    base: '/ip-address-tracker/',
     plugins: [react()],
   }
 })
